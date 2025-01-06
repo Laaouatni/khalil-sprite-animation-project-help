@@ -25,11 +25,19 @@
     <div id="imageShow"></div>
   </div>
   </div>
-  <div id="commands">
-    <label for="imageSelector">
-      <span>Image:</span>
-    </label>
-    <select id="imageSelector"></select>
+  <div id="commands" style="display: flex; gap: 1rem; place-items: center;">
+    <div>
+      <label for="imageSelector">
+        <span>Image:</span>
+      </label>
+      <select id="imageSelector"></select>
+    </div>
+    <div>
+      <label for="slider">
+        <span>Speed:</span>
+      </label>
+      <input type="range" id="slider" min="0" max="100" value="0" />
+    </div>
   </div>
 </body>
 </htm>
