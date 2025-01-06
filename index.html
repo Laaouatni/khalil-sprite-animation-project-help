@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script defer src="./script.js"></script>
   <style>
+    * {
+      font-family: "Arial";
+    }
+
     #imageShow {
       border: 1px solid black;
       width: 130px;
@@ -13,14 +18,18 @@
     }
   </style>
 </head>
-<body class="p-2">
-  <div id="result">
-    <div id="imageShow"></img>
+
+<body style="display: grid; gap: 1rem;">
+  <h1>khalil animation</h1>
+  <div id="result" style="zoom:3">
+    <div id="imageShow"></div>
+  </div>
   </div>
   <div id="commands">
     <label for="imageSelector">
-      <select id="imageSelector"></select>
+      <span>Image:</span>
     </label>
+    <select id="imageSelector"></select>
   </div>
 </body>
-</html>
+</htm>
