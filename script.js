@@ -49,8 +49,8 @@ function generateSelector() {
   });
 };
 
-function gotoFrame(x, y) {
-  appComponents.imageShow.style.backgroundPosition = `${x}px ${y}px`;
+function gotoFrame(thisX, thisY) {
+  appComponents.imageShow.style.backgroundPosition = `${thisX}px ${thisY}px`;
 }
 
 // const stylingStrings = {
