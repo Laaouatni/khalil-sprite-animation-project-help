@@ -39,10 +39,8 @@ const appLogic = {
 
 appLogic.generateSelector();
 appLogic.changeImage(appLogic.getSelectorValue(appComponents.imageSelect));
-appLogic.gotoFrame(0, 0);
-appLogic.loopOverImage()
-
-console.log(getSelectorOptionName(appComponents.imageSelect));
+// appLogic.gotoFrame(0, 0);
+appLogic.loopOverImage(getSelectorOptionName(appComponents.imageSelect))
 
 function getSelectorOptionName(selectElement) {
   return selectElement.options[selectElement.selectedIndex].textContent;
