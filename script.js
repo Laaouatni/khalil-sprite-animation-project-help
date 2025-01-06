@@ -13,11 +13,11 @@ const imgData = {
 const appComponents = {
   imageSelect: document.querySelector("#imageSelector"),
   imageShow: document.querySelector("#imageShow"),
-}
+};
 
 Object.entries(imgData).forEach(([key, value]) => {
   const thisUrl = value.url;
-  console.log(thisUrl)
+  console.log(thisUrl);
   const option = document.createElement("option");
   option.value = value.url;
   option.textContent = key;
@@ -27,18 +27,24 @@ Object.entries(imgData).forEach(([key, value]) => {
 const imageSize = {
   width: 100,
   height: 140,
-}
+};
 
 const stylingStrings = {
   defineHeightWidth: `width:${imageSize.width}px; height: ${imageSize.height}px;`,
 };
 
 // appComponents.imageShow.src = imgData.nameImage.url;
-appComponents.imageShow?.setAttribute("style", `${stylingStrings.defineHeightWidth} background-image: url(${imgData.nameImage.url})`);
+appComponents.imageShow?.setAttribute(
+  "style",
+  `${stylingStrings.defineHeightWidth} background-image: url(${imgData.nameImage.url})`,
+);
 
 appComponents.imageSelect.addEventListener("change", (e) => {
   const selectedUrl = e.target.value;
-  appComponents.imageShow?.setAttribute("style", `${stylingStrings.defineHeightWidth} background-image: url(${selectedUrl})`);
+  appComponents.imageShow?.setAttribute(
+    "style",
+    `${stylingStrings.defineHeightWidth} background-image: url(${selectedUrl})`,
+  );
   // appComponents.imageShow.src = selectedUrl;
 });
 
@@ -46,9 +52,12 @@ const SECOND = 1000;
 
 for (let frameIndex = 0; frameIndex < 5; frameIndex++) {
   setTimeout(() => {
-    console.log(frameIndex *100)
-    appComponents.imageShow.setAttribute("style", `${stylingStrings.defineHeightWidth} background: url(${imgData.nameImage.url}) ${imageSize.width * frameIndex}px 0px;`);
+    console.log(frameIndex * 100);
+    appComponents.imageShow.setAttribute(
+      "style",
+      `${stylingStrings.defineHeightWidth} background: url(${
+        imgData.nameImage.url
+      }) ${imageSize.width * -1 * frameIndex * 4}px 0px;`,
+    );
   }, frameIndex * SECOND);
 }
-
-
