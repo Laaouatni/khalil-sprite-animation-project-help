@@ -7,9 +7,15 @@ const imgData = {
   },
   anotherImage: {
     url: "./imgs/1.jpeg",
+    positions: {
+      0: [0, 0]
+    }
   },
   idkTheName: {
     url: "./imgs/2.jpeg",
+    positions: {
+      0: [0, 0]
+    }
   },
 };
 
@@ -48,5 +54,7 @@ appComponents.imageSelect.addEventListener("change", (e) => {
     `${stylingStrings.defineHeightWidth} background-image: url(${selectedUrl})`,
   );
 
-  const arrayPositions = imgData[e.target.textContent].positions;
+  // const arrayPositions = imgData[e.target.textContent].positions;
+
+  console.log(e.target.querySelector(`select[id='${e.target.value}']`));
 });
