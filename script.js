@@ -34,13 +34,13 @@ const appLogic = {
   getSelectorValue,
   changeImage,
   gotoFrame,
-  loopOverImage
+  loopOverImage,
 };
 
 appLogic.generateSelector();
 appLogic.changeImage(appLogic.getSelectorValue(appComponents.imageSelect));
 // appLogic.gotoFrame(0, 0);
-appLogic.loopOverImage(getSelectorOptionName(appComponents.imageSelect))
+appLogic.loopOverImage(getSelectorOptionName(appComponents.imageSelect));
 
 function getSelectorOptionName(selectElement) {
   return selectElement.options[selectElement.selectedIndex].textContent;
@@ -49,6 +49,13 @@ function getSelectorOptionName(selectElement) {
 function loopOverImage(imageName) {
   const thisObjData = imgData[imageName];
   const framesForEachLine = thisObjData.numberItems.x;
+  framesForEachLine.forEach((numberElementsForThisLine, y) => {
+    for (let x = 0; x < numberElementsForThisLine; x++) {
+      setTimeout(() => {
+        appLogic.gotoFrame(x, y);
+      }, x * (1000 / 2));
+    }
+  });
 }
 
 function generateSelector() {
