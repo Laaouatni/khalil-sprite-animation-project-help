@@ -27,6 +27,7 @@ const imgData = {
 const appComponents = {
   imageSelect: document.querySelector("#imageSelector"),
   imageShow: document.querySelector("#imageShow"),
+  slider: document.querySelector("#slider"),
 };
 
 const appLogic = {
@@ -36,14 +37,24 @@ const appLogic = {
   gotoFrame,
   loopOverImage,
   changeAndLoopOnImage,
+  updateDelayHtmlString,
 };
 
 appLogic.generateSelector();
 appLogic.changeAndLoopOnImage(appComponents.imageSelect);
+appLogic.updateDelayHtmlString();
+
+appComponents.slider.addEventListener("input", () => {
+  appLogic.updateDelayHtmlString();
+});
 
 appComponents.imageSelect.addEventListener("change", (e) => {
   appLogic.changeAndLoopOnImage(e.target);
 });
+
+function updateDelayHtmlString() {
+  document.querySelector("#delayValue").textContent = `${getDelayMs()}ms`;
+}
 
 function changeAndLoopOnImage(selectElement) {
   appLogic.changeImage(appLogic.getSelectorValue(selectElement));
@@ -65,13 +76,15 @@ function loopOverImage(imageName) {
 
         const isLastX = x === numberElementsForThisLine - 1;
         const isLastY = y === framesForEachLine.length - 1;
-        const hasChangedImage = !(previousImage === appLogic.getSelectorValue(appComponents.imageSelect));
-        if ((isLastX && isLastY) && !hasChangedImage) {
+        const hasChangedImage = !(
+          previousImage === appLogic.getSelectorValue(appComponents.imageSelect)
+        );
+        if (isLastX && isLastY && !hasChangedImage) {
           setTimeout(() => {
             appLogic.loopOverImage(imageName);
           }, getDelayMs());
         }
-      }, (x * getDelayMs()) + (y * getDelayMs()));
+      }, x * getDelayMs() + y * getDelayMs());
     }
   });
 }
