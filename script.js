@@ -3,6 +3,8 @@ const genericPositions = {
   y: [0, -109, -216, -323, -539, -649, -752, -856, -964],
 };
 
+const DELAY = 1000 / 8;
+
 const imgData = {
   nameImage: {
     url: "./imgs/0.jpeg",
@@ -61,7 +63,7 @@ function loopOverImage(imageName) {
     for (let x = 0; x < numberElementsForThisLine; x++) {
       setTimeout(() => {
         appLogic.gotoFrame(x, y);
-      }, x * (1000 / 2) + y * 1000);
+      }, (x * DELAY) + (y * DELAY));
     }
   });
 }
