@@ -47,7 +47,8 @@ function getSelectorOptionName(selectElement) {
 }
 
 function loopOverImage(imageName) {
-
+  const thisObjData = imgData[imageName];
+  const framesForEachLine = thisObjData.numberItems.x;
 }
 
 function generateSelector() {
