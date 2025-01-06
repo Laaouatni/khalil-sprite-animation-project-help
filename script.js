@@ -22,19 +22,27 @@ const imgData = {
       x: [6, 8, 8, 10, 4, 3, 4, 2, 3],
     },
   },
-// };
+};
 
-// const appComponents = {
-//   imageSelect: document.querySelector("#imageSelector"),
-//   imageShow: document.querySelector("#imageShow"),
-// };
+const appComponents = {
+  imageSelect: document.querySelector("#imageSelector"),
+  imageShow: document.querySelector("#imageShow"),
+};
 
-// Object.entries(imgData).forEach(([key, value]) => {
-//   const option = document.createElement("option");
-//   option.value = value.url;
-//   option.textContent = key;
-//   appComponents.imageSelect.appendChild(option);
-// });
+const appLogic = {
+  generateSelector
+}
+
+appLogic.generateSelector();
+
+function generateSelector() {
+  Object.entries(imgData).forEach(([key, value]) => {
+    const option = document.createElement("option");
+    option.value = value.url;
+    option.textContent = key;
+    appComponents.imageSelect.appendChild(option);
+  });
+};
 
 // const imageSize = {
 //   width: 140,
