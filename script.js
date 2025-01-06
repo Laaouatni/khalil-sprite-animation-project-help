@@ -90,7 +90,7 @@ function loopOverImage(imageName) {
 }
 
 function getDelayMs() {
-  return document.querySelector("#slider").value;
+  return appComponents.slider.value;
 }
 
 function generateSelector() {
