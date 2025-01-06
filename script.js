@@ -2,11 +2,14 @@ const imgData = {
   nameImage: {
     url: "./imgs/0.jpeg",
     positions: {
-      0: [
-        [0, 0],
-        [140, 0],
+      firstLine: [
+        [20, 0],
+        [-89, 0],
+        [-195, 0],
+        [-304, 0],
+        [-408, 0],
+        [-513, 0]
       ],
-      1: [[140, 1]],
     },
   },
   anotherImage: {
@@ -18,7 +21,7 @@ const imgData = {
   idkTheName: {
     url: "./imgs/2.jpeg",
     positions: {
-      0: [[0,0]],
+      0: [[0, 0]],
     },
   },
 };
@@ -49,27 +52,43 @@ appComponents.imageShow?.setAttribute(
   `${stylingStrings.defineHeightWidth} background: url(${imgData.nameImage.url}) 0px 0px`,
 );
 
-appComponents.imageSelect.addEventListener("change", (e) => {
-  const selectedUrl = e.target.value;
-  appComponents.imageShow?.setAttribute(
-    "style",
-    `${stylingStrings.defineHeightWidth} background-image: url(${selectedUrl})`,
-  );
+const initialOption = appComponents.imageSelect?.querySelector("option");
 
-  const thisUsedOption = e.target.querySelector(
-    `option[value='${selectedUrl}']`,
-  );
-  const arrayPositions = Object.values(
-    imgData[thisUsedOption.textContent].positions,
-  ).flat();
+const arrayPositions = Object.values(
+  imgData[initialOption?.textContent].positions,
+).flat();
 
-  arrayPositions.forEach((position, index) => {
-    setTimeout(() => {
-      const [x, y] = position;
-      appComponents.imageShow?.setAttribute(
-        "style",
-        `${stylingStrings.defineHeightWidth} background-image: url(${selectedUrl}); background-position: ${x}px ${y}px`,
-      );
-    }, index * (1000 / 2));
-  });
+arrayPositions.forEach((position, index) => {
+  setTimeout(() => {
+    const [x, y] = position;
+    appComponents.imageShow?.setAttribute(
+      "style",
+      `${stylingStrings.defineHeightWidth} background: url(${imgData.nameImage.url}) ${x}px ${y}px`,
+    );
+  }, index * (1000 / 2));
 });
+
+// appComponents.imageSelect.addEventListener("change", (e) => {
+//   const selectedUrl = e.target.value;
+//   appComponents.imageShow?.setAttribute(
+//     "style",
+//     `${stylingStrings.defineHeightWidth} background-image: url(${selectedUrl})`,
+//   );
+
+//   const thisUsedOption = e.target.querySelector(
+//     `option[value='${selectedUrl}']`,
+//   );
+//   const arrayPositions = Object.values(
+//     imgData[thisUsedOption.textContent].positions,
+//   ).flat();
+
+//   arrayPositions.forEach((position, index) => {
+//     setTimeout(() => {
+//       const [x, y] = position;
+//       appComponents.imageShow?.setAttribute(
+//         "style",
+//         `${stylingStrings.defineHeightWidth} background-image: url(${selectedUrl}); background-position: ${x}px ${y}px`,
+//       );
+//     }, index * (1000 / 2));
+//   });
+// });
