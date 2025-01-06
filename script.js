@@ -57,12 +57,21 @@ function getSelectorOptionName(selectElement) {
 }
 
 function loopOverImage(imageName) {
+  const previousImage = appLogic.getSelectorValue(appComponents.imageSelect);
   const thisObjData = imgData[imageName];
   const framesForEachLine = thisObjData.numberItems.x;
   framesForEachLine.forEach((numberElementsForThisLine, y) => {
     for (let x = 0; x < numberElementsForThisLine; x++) {
       setTimeout(() => {
         appLogic.gotoFrame(x, y);
+
+        const isLastX = x === numberElementsForThisLine - 1;
+        const isLastY = y === framesForEachLine.length - 1;
+        if ((isLastX && isLastY) && previousImage === appLogic.getSelectorValue(appComponents.imageSelect)) {
+          setTimeout(() => {
+            appLogic.loopOverImage(imageName);
+          }, DELAY);
+        }
       }, (x * DELAY) + (y * DELAY));
     }
   });
