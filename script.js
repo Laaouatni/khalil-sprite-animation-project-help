@@ -56,5 +56,8 @@ appComponents.imageSelect.addEventListener("change", (e) => {
 
   // const arrayPositions = imgData[e.target.textContent].positions;
 
-  console.log(e.target.querySelector(`select[id='${e.target.value}']`));
+  // console.log(e.target .querySelector(`option[id='${e.target.value}']`));
+  console.log(e.target.getElementById(`${e.target.value}`));
 });
+
+// i will search how to acces id, I remembered was like this, one minute
