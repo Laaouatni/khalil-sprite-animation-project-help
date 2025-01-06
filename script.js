@@ -23,3 +23,5 @@ Object.entries(imgData).forEach(([key, value]) => {
   option.textContent = key;
   appComponents.imageSelect.appendChild(option);
 });
+
+
