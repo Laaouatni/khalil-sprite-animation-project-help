@@ -41,8 +41,9 @@ const SECOND = 1000;
 
 for (let frameIndex = 0; frameIndex < 5; frameIndex++) {
   setTimeout(() => {
-    appComponents.imageShow.setAttribute("style", `${stylingStrings.defineHeightWidth} background-image: url(${selectedUrl})`);
-  }, frameIndex * SECOND)
+    console.log(frameIndex *100)
+    appComponents.imageShow.setAttribute("style", `${stylingStrings.defineHeightWidth} background: url(${imgData.nameImage.url}) px 0px;`);
+  }, frameIndex * SECOND);
 }
 
 
