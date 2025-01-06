@@ -19,6 +19,7 @@ Object.entries(imgData).forEach(([key, value]) => {
   const thisUrl = value.url;
   console.log(thisUrl)
   const option = document.createElement("option");
-  option.value = key;
+  option.value = value.url;
+  option.textContent = key;
   appComponents.imageSelect.appendChild(option);
 });
