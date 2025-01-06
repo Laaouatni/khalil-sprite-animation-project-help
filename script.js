@@ -2,7 +2,8 @@ const imgData = {
   nameImage: {
     url: "./imgs/0.jpeg",
     positions: {
-      0: [0, 0],
+      0: [[0, 0], [140, 0]],
+      1: [140, 1],
     },
   },
   anotherImage: {
@@ -59,3 +60,7 @@ appComponents.imageSelect.addEventListener("change", (e) => {
 
   console.log(arrayPositions)
 });
+
+// just a minute i will be right back
+
+// ok I will continue
