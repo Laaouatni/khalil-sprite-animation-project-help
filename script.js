@@ -1,27 +1,24 @@
 const imgData = {
   nameImage: {
     url: "./imgs/0.jpeg",
-    positions: {
-      firstLine: [
-        [20, 0],
-        [-89, 0],
-        [-195, 0],
-        [-304, 0],
-        [-408, 0],
-        [-513, 0]
-      ],
+    genericPositions: {
+      x: [20, -89, -195, -304, -408, -513],
+      y: [-109, 216, 323, 539, 649, 752, 856],
+    },
+    numberItems: {
+      x: [6, 8, 8, 12, 5, 3, 4, 4, 2],
     },
   },
   anotherImage: {
     url: "./imgs/1.jpeg",
-    positions: {
-      0: [[0, 0]],
+    numberItems: {
+      x: [6, 8, 8, 12, 6, 4, 3, 2, 2],
     },
   },
   idkTheName: {
     url: "./imgs/2.jpeg",
-    positions: {
-      0: [[0, 0]],
+    numberItems: {
+      x: [6, 8, 8, 10, 4, 3, 4, 2, 3],
     },
   },
 };
