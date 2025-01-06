@@ -35,17 +35,20 @@ const appLogic = {
   changeImage,
   gotoFrame,
   loopOverImage,
+  changeAndLoopOnImage,
 };
 
 appLogic.generateSelector();
-
-appLogic.changeImage(appLogic.getSelectorValue(appComponents.imageSelect));
-appLogic.loopOverImage(getSelectorOptionName(appComponents.imageSelect));
+appLogic.changeAndLoopOnImage(appComponents.imageSelect);
 
 appComponents.imageSelect.addEventListener("change", (e) => {
-  appLogic.changeImage(appLogic.getSelectorValue(e.target));
-  appLogic.loopOverImage(getSelectorOptionName(e.target));
+  appLogic.changeAndLoopOnImage(e.target);
 });
+
+function changeAndLoopOnImage(selectElement) {
+  appLogic.changeImage(appLogic.getSelectorValue(selectElement));
+  appLogic.loopOverImage(getSelectorOptionName(selectElement));
+}
 
 function getSelectorOptionName(selectElement) {
   return selectElement.options[selectElement.selectedIndex].textContent;
