@@ -25,7 +25,7 @@ Object.entries(imgData).forEach(([key, value]) => {
 });
 
 const imageSize = {
-  width: 100,
+  width: 155,
   height: 140,
 };
 
@@ -36,7 +36,7 @@ const stylingStrings = {
 // appComponents.imageShow.src = imgData.nameImage.url;
 appComponents.imageShow?.setAttribute(
   "style",
-  `${stylingStrings.defineHeightWidth} background-image: url(${imgData.nameImage.url})`,
+  `${stylingStrings.defineHeightWidth} background: url(${imgData.nameImage.url}) 0px 0px`,
 );
 
 appComponents.imageSelect.addEventListener("change", (e) => {
@@ -50,14 +50,16 @@ appComponents.imageSelect.addEventListener("change", (e) => {
 
 const SECOND = 1000;
 
-for (let frameIndex = 0; frameIndex < 5; frameIndex++) {
+for (let frameIndex = 0; frameIndex < 10; frameIndex++) {
   setTimeout(() => {
     console.log(frameIndex * 100);
     appComponents.imageShow.setAttribute(
       "style",
       `${stylingStrings.defineHeightWidth} background: url(${
         imgData.nameImage.url
-      }) ${imageSize.width * -1 * frameIndex * 4}px 0px;`,
+      }) ${imageSize.width * -1 * frameIndex}px 0px;`,
     );
-  }, frameIndex * SECOND);
+  }, frameIndex * (SECOND / 4));
 }
+
+//would chatgpt or another ai tell us how to divise the photo so
