@@ -19,25 +19,26 @@
   </style>
 </head>
 
-<body style="display: grid; gap: 1rem;">
-  <h1>khalil animation</h1>
-  <div id="result" style="zoom:3">
-    <div id="imageShow"></div>
-  </div>
-  </div>
-  <div id="commands" style="display: flex; gap: 1rem; place-items: center;">
-    <div>
-      <label for="imageSelector">
-        <span>Image:</span>
-      </label>
-      <select id="imageSelector"></select>
+<body style="padding: 1rem;">
+  <div style="font-weight: bold; font-size:xx-large">khalil animation</div>
+  <div style="width:max-content; display: grid; gap: 1rem;">
+    <div id="result" style="zoom:3">
+      <div id="imageShow"></div>
     </div>
-    <div>
-      <label for="slider">
-        <span>Speed:</span>
-      </label>
-      <input type="range" id="slider" min="10" max="1000" value="500" />
+    <div id="commands" style="display: flex; justify-content: space-between; place-items: center;">
+      <div>
+        <label for="imageSelector">
+          <span>Image:</span>
+        </label>
+        <select id="imageSelector"></select>
+      </div>
+      <div>
+        <label for="slider">
+          <span>Speed:</span>
+        </label>
+        <input type="range" id="slider" min="10" max="1000" value="500" />
+      </div>
     </div>
   </div>
 </body>
-</htm>
+</html>
