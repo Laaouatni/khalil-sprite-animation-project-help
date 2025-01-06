@@ -25,7 +25,7 @@ Object.entries(imgData).forEach(([key, value]) => {
 });
 
 const imageSize = {
-  width: 155,
+  width: 140,
   height: 140,
 };
 
@@ -61,5 +61,3 @@ for (let frameIndex = 0; frameIndex < 10; frameIndex++) {
     );
   }, frameIndex * (SECOND / 4));
 }
-
-//would chatgpt or another ai tell us how to divise the photo so
