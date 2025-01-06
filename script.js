@@ -24,11 +24,21 @@ Object.entries(imgData).forEach(([key, value]) => {
   appComponents.imageSelect.appendChild(option);
 });
 
-appComponents.imageShow.src = imgData.nameImage.url;
+const stylingStrings = {
+  defineHeightWidth: "width:100px; height: 140px;",
+};
+
+// appComponents.imageShow.src = imgData.nameImage.url;
+appComponents.imageShow?.setAttribute("style", `${stylingStrings.defineHeightWidth} background-image: url(${imgData.nameImage.url})`);
 
 appComponents.imageSelect.addEventListener("change", (e) => {
   const selectedUrl = e.target.value;
-  appComponents.imageShow.src = selectedUrl;
+  appComponents.imageShow?.setAttribute("style", `${stylingStrings.defineHeightWidth} background-image: url(${selectedUrl})`);
+  // appComponents.imageShow.src = selectedUrl;
 });
+
+for(let i = 0; i < 10; i++) {
+  console.log(i)
+}
 
 
