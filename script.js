@@ -25,3 +25,10 @@ Object.entries(imgData).forEach(([key, value]) => {
 });
 
 
+
+appComponents.imageSelect.addEventListener("change", (e) => {
+  const selectedUrl = e.target.value;
+  appComponents.imageShow.src = selectedUrl;
+});
+
+
