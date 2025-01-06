@@ -2,20 +2,23 @@ const imgData = {
   nameImage: {
     url: "./imgs/0.jpeg",
     positions: {
-      0: [[0, 0], [140, 0]],
-      1: [140, 1],
+      0: [
+        [0, 0],
+        [140, 0],
+      ],
+      1: [[140, 1]],
     },
   },
   anotherImage: {
     url: "./imgs/1.jpeg",
     positions: {
-      0: [0, 0],
+      0: [[0, 0]],
     },
   },
   idkTheName: {
     url: "./imgs/2.jpeg",
     positions: {
-      0: [0, 0],
+      0: [[0,0]],
     },
   },
 };
@@ -26,8 +29,6 @@ const appComponents = {
 };
 
 Object.entries(imgData).forEach(([key, value]) => {
-  const thisUrl = value.url;
-  console.log(thisUrl);
   const option = document.createElement("option");
   option.value = value.url;
   option.textContent = key;
@@ -55,12 +56,20 @@ appComponents.imageSelect.addEventListener("change", (e) => {
     `${stylingStrings.defineHeightWidth} background-image: url(${selectedUrl})`,
   );
 
-  const thisUsedOption = e.target.querySelector(`option[value='${selectedUrl}']`);
-  const arrayPositions = Object.values(imgData[thisUsedOption.textContent].positions).flat();
+  const thisUsedOption = e.target.querySelector(
+    `option[value='${selectedUrl}']`,
+  );
+  const arrayPositions = Object.values(
+    imgData[thisUsedOption.textContent].positions,
+  ).flat();
 
-  console.log(arrayPositions)
+  arrayPositions.forEach((position, index) => {
+    setTimeout(() => {
+      const [x, y] = position;
+      appComponents.imageShow?.setAttribute(
+        "style",
+        `${stylingStrings.defineHeightWidth} background-image: url(${selectedUrl}); background-position: ${x}px ${y}px`,
+      );
+    }, index * (1000 / 2));
+  });
 });
-
-// just a minute i will be right back
-
-// ok I will continue
