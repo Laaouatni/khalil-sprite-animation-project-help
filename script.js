@@ -24,7 +24,7 @@ Object.entries(imgData).forEach(([key, value]) => {
   appComponents.imageSelect.appendChild(option);
 });
 
-
+appComponents.imageShow.src = imgData.nameImage.url;
 
 appComponents.imageSelect.addEventListener("change", (e) => {
   const selectedUrl = e.target.value;
