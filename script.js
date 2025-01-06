@@ -56,7 +56,7 @@ appComponents.imageSelect.addEventListener("change", (e) => {
   );
 
   const thisUsedOption = e.target.querySelector(`option[value='${selectedUrl}']`);
-  const arrayPositions = imgData[thisUsedOption.textContent].positions;
+  const arrayPositions = Object.values(imgData[thisUsedOption.textContent].positions).flat();
 
   console.log(arrayPositions)
 });
