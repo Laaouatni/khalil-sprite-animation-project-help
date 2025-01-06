@@ -1,11 +1,11 @@
 const imgData = {
-  0: {
+  nameImage: {
     url: "./imgs/0.jpeg",
   },
-  1: {
+  anotherImage: {
     url: "./imgs/1.jpeg",
   },
-  2: {
+  idkTheName: {
     url: "./imgs/2.jpeg",
   },
 };
