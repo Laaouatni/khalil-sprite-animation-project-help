@@ -38,8 +38,7 @@ const appLogic = {
 
 appLogic.generateSelector();
 appLogic.changeImage(appLogic.getSelectorValue(appComponents.imageSelect));
-appLogic.gotoFrame(0, 8);
-
+appLogic.gotoFrame(0, 0);
 
 function generateSelector() {
   Object.entries(imgData).forEach(([key, value]) => {
