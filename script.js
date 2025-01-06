@@ -2,20 +2,20 @@ const imgData = {
   nameImage: {
     url: "./imgs/0.jpeg",
     positions: {
-      0: [0, 0]
-    }
+      0: [0, 0],
+    },
   },
   anotherImage: {
     url: "./imgs/1.jpeg",
     positions: {
-      0: [0, 0]
-    }
+      0: [0, 0],
+    },
   },
   idkTheName: {
     url: "./imgs/2.jpeg",
     positions: {
-      0: [0, 0]
-    }
+      0: [0, 0],
+    },
   },
 };
 
@@ -54,10 +54,8 @@ appComponents.imageSelect.addEventListener("change", (e) => {
     `${stylingStrings.defineHeightWidth} background-image: url(${selectedUrl})`,
   );
 
-  // const arrayPositions = imgData[e.target.textContent].positions;
+  const thisUsedOption = e.target.querySelector(`option[value='${selectedUrl}']`);
+  const arrayPositions = imgData[thisUsedOption.textContent].positions;
 
-  // console.log(e.target .querySelector(`option[id='${e.target.value}']`));
-  console.log(e.target.getElementById(`${e.target.value}`));
+  console.log(arrayPositions)
 });
-
-// i will search how to acces id, I remembered was like this, one minute
