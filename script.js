@@ -39,7 +39,6 @@ const appLogic = {
 
 appLogic.generateSelector();
 appLogic.changeImage(appLogic.getSelectorValue(appComponents.imageSelect));
-// appLogic.gotoFrame(0, 0);
 appLogic.loopOverImage(getSelectorOptionName(appComponents.imageSelect));
 
 function getSelectorOptionName(selectElement) {
@@ -78,28 +77,3 @@ function changeImage(url) {
 function gotoFrame(thisX, thisY) {
   appComponents.imageShow.style.backgroundPosition = `${genericPositions.x[thisX]}px ${genericPositions.y[thisY]}px`;
 }
-
-// const stylingStrings = {
-//   defineHeightWidth: `width:${imageSize.width}px; height: ${imageSize.height}px;`,
-// };
-
-// appComponents.imageShow?.setAttribute(
-//   "style",
-//   `${stylingStrings.defineHeightWidth} background: url(${imgData.nameImage.url}) 0px 0px`,
-// );
-
-// const initialOption = appComponents.imageSelect?.querySelector("option");
-
-// const arrayPositions = Object.values(
-//   imgData[initialOption?.textContent].positions,
-// ).flat();
-
-// arrayPositions.forEach((position, index) => {
-//   setTimeout(() => {
-//     const [x, y] = position;
-//     appComponents.imageShow?.setAttribute(
-//       "style",
-//       `${stylingStrings.defineHeightWidth} background: url(${imgData.nameImage.url}) ${x}px ${y}px`,
-//     );
-//   }, index * (1000 / 2));
-// });
