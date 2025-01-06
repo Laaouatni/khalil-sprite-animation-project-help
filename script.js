@@ -24,6 +24,11 @@ const imgData = {
   },
 };
 
+const imageSize = {
+  width: 140,
+  height: 140,
+};
+
 const appComponents = {
   imageSelect: document.querySelector("#imageSelector"),
   imageShow: document.querySelector("#imageShow"),
@@ -44,10 +49,9 @@ function generateSelector() {
   });
 };
 
-// const imageSize = {
-//   width: 140,
-//   height: 140,
-// };
+function gotoFrame(x, y) {
+  appComponents.imageShow.style.backgroundPosition = `${x}px ${y}px`;
+}
 
 // const stylingStrings = {
 //   defineHeightWidth: `width:${imageSize.width}px; height: ${imageSize.height}px;`,
