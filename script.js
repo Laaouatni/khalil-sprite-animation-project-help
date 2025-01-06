@@ -1,6 +1,6 @@
 const genericPositions = {
   x: [20, -89, -195, -304, -408, -513, -620, -720, -820, -920, -1030],
-  y: [0, -109, -216, -323, -539, -649, -752, -856, -964],
+  y: [0, -109, -216, -323, -539, -649, -752, -856],
 };
 
 const imgData = {
@@ -38,8 +38,14 @@ const appLogic = {
 };
 
 appLogic.generateSelector();
+
 appLogic.changeImage(appLogic.getSelectorValue(appComponents.imageSelect));
 appLogic.loopOverImage(getSelectorOptionName(appComponents.imageSelect));
+
+appComponents.imageSelect.addEventListener("change", (e) => {
+  appLogic.changeImage(appLogic.getSelectorValue(e.target));
+  appLogic.loopOverImage(getSelectorOptionName(e.target));
+});
 
 function getSelectorOptionName(selectElement) {
   return selectElement.options[selectElement.selectedIndex].textContent;
