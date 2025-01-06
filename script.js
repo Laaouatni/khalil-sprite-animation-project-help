@@ -67,7 +67,8 @@ function loopOverImage(imageName) {
 
         const isLastX = x === numberElementsForThisLine - 1;
         const isLastY = y === framesForEachLine.length - 1;
-        if ((isLastX && isLastY) && previousImage === appLogic.getSelectorValue(appComponents.imageSelect)) {
+        const hasChangedImage = !(previousImage === appLogic.getSelectorValue(appComponents.imageSelect));
+        if ((isLastX && isLastY) && !hasChangedImage) {
           setTimeout(() => {
             appLogic.loopOverImage(imageName);
           }, DELAY);
