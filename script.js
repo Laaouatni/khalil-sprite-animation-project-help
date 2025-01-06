@@ -1,6 +1,6 @@
 const genericPositions = {
   x: [20, -89, -195, -304, -408, -513, -620, -720, -820, -920, -1030],
-  y: [-109, 216, 323, 539, 649, 752, 856, 964],
+  y: [0, -109, -216, -323, -539, -649, -752, -856, -964],
 };
 
 const imgData = {
@@ -33,12 +33,13 @@ const appLogic = {
   generateSelector,
   getSelectorValue,
   changeImage,
+  gotoFrame,
 };
 
 appLogic.generateSelector();
 appLogic.changeImage(appLogic.getSelectorValue(appComponents.imageSelect));
+appLogic.gotoFrame(0, 8);
 
-console.log(appComponents.imageSelect.value);
 
 function generateSelector() {
   Object.entries(imgData).forEach(([key, value]) => {
