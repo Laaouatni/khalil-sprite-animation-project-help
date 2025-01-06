@@ -37,8 +37,12 @@ appComponents.imageSelect.addEventListener("change", (e) => {
   // appComponents.imageShow.src = selectedUrl;
 });
 
-for(let i = 0; i < 10; i++) {
-  console.log(i)
+const SECOND = 1000;
+
+for (let frameIndex = 0; frameIndex < 5; frameIndex++) {
+  setTimeout(() => {
+    appComponents.imageShow.setAttribute("style", `${stylingStrings.defineHeightWidth} background-image: url(${selectedUrl})`);
+  }, frameIndex * SECOND)
 }
 
 
