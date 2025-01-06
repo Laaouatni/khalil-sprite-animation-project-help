@@ -53,7 +53,7 @@ function loopOverImage(imageName) {
     for (let x = 0; x < numberElementsForThisLine; x++) {
       setTimeout(() => {
         appLogic.gotoFrame(x, y);
-      }, x * (1000 / 2));
+      }, x * (1000 / 2) + y * 1000);
     }
   });
 }
