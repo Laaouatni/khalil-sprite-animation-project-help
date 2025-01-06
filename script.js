@@ -24,21 +24,21 @@ const imgData = {
   },
 };
 
-const imageSize = {
-  width: 140,
-  height: 140,
-};
-
 const appComponents = {
   imageSelect: document.querySelector("#imageSelector"),
   imageShow: document.querySelector("#imageShow"),
 };
 
 const appLogic = {
-  generateSelector
-}
+  generateSelector,
+  getSelectorValue,
+  changeImage,
+};
 
 appLogic.generateSelector();
+appLogic.changeImage(appLogic.getSelectorValue(appComponents.imageSelect));
+
+console.log(appComponents.imageSelect.value);
 
 function generateSelector() {
   Object.entries(imgData).forEach(([key, value]) => {
@@ -47,10 +47,18 @@ function generateSelector() {
     option.textContent = key;
     appComponents.imageSelect.appendChild(option);
   });
-};
+}
+
+function getSelectorValue(selectElement) {
+  return selectElement.value;
+}
+
+function changeImage(url) {
+  appComponents.imageShow.style.backgroundImage = `url(${url})`;
+}
 
 function gotoFrame(thisX, thisY) {
-  appComponents.imageShow.style.backgroundPosition = `${thisX}px ${thisY}px`;
+  appComponents.imageShow.style.backgroundPosition = `${genericPositions.x[thisX]}px ${genericPositions.y[thisY]}px`;
 }
 
 // const stylingStrings = {
