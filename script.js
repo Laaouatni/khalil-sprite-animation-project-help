@@ -3,8 +3,6 @@ const genericPositions = {
   y: [0, -109, -216, -323, -539, -649, -752, -856, -964],
 };
 
-const DELAY = 1000 / 8;
-
 const imgData = {
   nameImage: {
     url: "./imgs/0.jpeg",
@@ -71,11 +69,15 @@ function loopOverImage(imageName) {
         if ((isLastX && isLastY) && !hasChangedImage) {
           setTimeout(() => {
             appLogic.loopOverImage(imageName);
-          }, DELAY);
+          }, getDelayMs());
         }
-      }, (x * DELAY) + (y * DELAY));
+      }, (x * getDelayMs()) + (y * getDelayMs()));
     }
   });
+}
+
+function getDelayMs() {
+  return document.querySelector("#slider").value;
 }
 
 function generateSelector() {
