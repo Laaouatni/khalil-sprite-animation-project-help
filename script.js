@@ -12,9 +12,12 @@ const imgData = {
 
 const appComponents = {
   imageSelect: document.querySelector("#imageSelector"),
+  imageShow: document.querySelector("#imageShow"),
 }
 
 Object.entries(imgData).forEach(([key, value]) => {
   const thisUrl = value.url;
   console.log(thisUrl)
+  const option = document.createElement("option");
+  option.value = key;
 });
