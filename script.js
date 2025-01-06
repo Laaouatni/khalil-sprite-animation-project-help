@@ -24,8 +24,13 @@ Object.entries(imgData).forEach(([key, value]) => {
   appComponents.imageSelect.appendChild(option);
 });
 
+const imageSize = {
+  width: 100,
+  height: 140,
+}
+
 const stylingStrings = {
-  defineHeightWidth: "width:100px; height: 140px;",
+  defineHeightWidth: `width:${imageSize.width}px; height: ${imageSize.height}px;`,
 };
 
 // appComponents.imageShow.src = imgData.nameImage.url;
@@ -42,7 +47,7 @@ const SECOND = 1000;
 for (let frameIndex = 0; frameIndex < 5; frameIndex++) {
   setTimeout(() => {
     console.log(frameIndex *100)
-    appComponents.imageShow.setAttribute("style", `${stylingStrings.defineHeightWidth} background: url(${imgData.nameImage.url}) px 0px;`);
+    appComponents.imageShow.setAttribute("style", `${stylingStrings.defineHeightWidth} background: url(${imgData.nameImage.url}) ${imageSize.width * frameIndex}px 0px;`);
   }, frameIndex * SECOND);
 }
 
